@@ -39,17 +39,17 @@ public class MovieRepository {
         return directorMap.get(directorName);
     }
 
-    public List<Movie> getMoviesByDirectorName( String directorName)throws NullPointerException{
-        System.out.println("p");
-        return directorMovieMap.get(directorName);
+    public List<String> getMoviesByDirectorName( String directorName){
+        List<String> movies = new ArrayList<>();
+        for(Movie movie : directorMovieMap.get(directorName)){
+            movies.add(movie.getName());
+        }
+        return movies;
     }
 
-    public List<Movie> findAllMovies(){
-        List<Movie> allMovies= new ArrayList<>();
-        for(String movie : movieMap.keySet()){
-            allMovies.add(getMovieByName(movie));
-        }
-        return  allMovies;
+    public List<String> findAllMovies(){
+        return new ArrayList<>(movieMap.keySet());
+
     }
 
     public String deleteDirectorByName( String directorName)throws NullPointerException{

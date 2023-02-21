@@ -33,11 +33,11 @@ public class MovieService {
         return watchListRepository.getDirectorByName(directorName);
     }
 
-    public List<Movie> getMoviesByDirectorName( String directorName){
+    public List<String> getMoviesByDirectorName( String directorName){
         return watchListRepository.getMoviesByDirectorName(directorName);
     }
 
-    public List<Movie> findAllMovies(){
+    public List<String> findAllMovies(){
         return watchListRepository.findAllMovies();
     }
 
